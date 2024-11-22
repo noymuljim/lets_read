@@ -17,16 +17,3 @@ class LeatsRead extends StatelessWidget{
   );
   }
 }
-class MainPage extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-       body: Container(
-         width: 210,
-         height: 200,
-         color: Colors.deepPurpleAccent,
-       ),
-    );
-  }
-
-}

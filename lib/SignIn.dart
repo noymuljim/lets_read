@@ -4,7 +4,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:lets_read/Forget.dart';
-import 'package:lets_read/Home.dart';
+import 'package:lets_read/navigation/bottombar.dart';
+
+
 
 class SignIn extends StatelessWidget{
   @override
@@ -96,7 +98,7 @@ class SignIn extends StatelessWidget{
                             context,MaterialPageRoute(
                           builder: (context)
                           {
-                            return home(); },
+                            return bottombar(); },
 
                         )
                         );  },
@@ -121,7 +123,7 @@ class SignIn extends StatelessWidget{
           Expanded(
               flex: 1,
               child: Container(
-                color: Colors.limeAccent,
+                color: Colors.white,
 
               )
           )
