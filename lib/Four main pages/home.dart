@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:lets_read/Four%20main%20pages/bookType.dart';
+import 'package:lets_read/Four%20main%20pages/bookType.dart';
 
 class home extends StatefulWidget{
   @override
@@ -8,10 +10,10 @@ class home extends StatefulWidget{
 
 class _homeState extends State<home> {
 
-  final List bookType=[
+  final List BookType=[
     ["This Week",true,],
     ["This Month",false,],
-    ["This Year",false]
+    ["This Year",false,],
 
   ];
 
@@ -19,10 +21,10 @@ class _homeState extends State<home> {
   void bookTypeSelected(int index){
 
     setState(() {
-      for(int i=0; i< bookType.length;i++){  //loop er maddhome ekta ekta kore select r  unselect hbe
-        bookType[i][1]= false;
+      for(int i=0; i< BookType.length;i++){  //loop er maddhome ekta ekta kore select r  unselect hbe
+        BookType[i][1]= false;
       }
-      bookType[index][1]=true;
+      BookType[index][1]=true;
     });
   }
 
@@ -79,7 +81,23 @@ class _homeState extends State<home> {
               ],
             ),
           ),
-SizedBox(height: 20,),
+SizedBox(height: 15,),
+
+          Container(
+            height: 50,
+            child: ListView.builder           ///builder diye upr theke data call korlam
+              (scrollDirection: Axis.horizontal,
+              itemCount: BookType.length,
+              itemBuilder: (context,index){
+                return bookType(BookType: BookType[index][0],
+                    isSelected: BookType[index][1],
+                    onTap: (){
+                      bookTypeSelected(index);
+                    }
+                );
+
+              },),
+          ),
           
         ],
           )
